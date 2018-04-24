@@ -19,5 +19,6 @@ from Main.app.login.views import login
 
 urlpatterns = [
 #    path('admin/', admin.site.urls),
+    path('', login),
     path('login/', login),
 ]

@@ -2,22 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 
-import urllib.request
-import urllib.parse
-import http.cookiejar
-import urllib.request
 
 loginsave = login
 
 
-# Create your views here.
-def login(request):
-    if request.user.is_authenticated:
-        return HttpResponseRedirect("/nobly/reception/index/")
-    return render(request, 'html/login/login.html')
-
-
-def loginsubmit(request):
+def login_submit(request):
     userall = request.POST['userall']
 
     dicttest = {}
@@ -30,6 +19,12 @@ def loginsubmit(request):
         return HttpResponseRedirect("/nobly/reception/index/")
     else:
         return render(request, 'login/login.html')
+
+
+def login(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect("/nobly/reception/index/")
+    return render(request, 'html/login/login.html')
 
 
 def loginout(request):
