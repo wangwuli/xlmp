@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<html>
+<head>
+<title>请登录</title>
+<link rel="stylesheet" type="text/css" href="{% static "html/login/css/login.css" %}"/>
+</head>
+
+<body>
+
+<div class="all">
+<div class="bo">
+
+<form action="/login/loginsubmit" method="post">
+{% csrf_token %}
+<input name="userall" type="password" style="width:240px; height:30px" class="la">
+</form>
+
+
+</div>
+</div>
+
+</body>
